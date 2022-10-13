@@ -1,8 +1,25 @@
-site_name: BookVault
+site_name: xxy's md
+site_url: http://md.xiaxuyang.com
+site_author: xxy2000s
+copyright: copyright &copy; 2021-present <a href="https://github.com/xxy2000s" target="_blank" rel="noopener noreferrer">xxy2000s</a>
 theme:
   name: material
 nav:
-  - 介绍: index.md
+  - 前言: "index.md"
+  - 工具:
+      - Git: "工具/Git.md"
+      - 论文: "工具/论文.md"
+      - 笔记系统: "工具/笔记系统.md"
+  - 开发:
+      - Java: "开发/Java.md"
+      - Go: "开发/Go.md"
+      - Python: "开发/Python.md"
+      - C++: "开发/C++.md"  
+  - 算法:
+      - 动态规划: "算法/动态规划.md"
+  - JavaAPI: "JavaAPI.md"
+  - Linux: "Linux.md"
+
   # - 安装:
       # - 本地环境搭建: "local.md"
       # - 发布至GitHub Pages: install/github-pages.md

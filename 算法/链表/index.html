@@ -65,6 +65,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -480,9 +485,45 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          链表
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         链表
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    链表
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    题库
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -938,6 +979,28 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    链表
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    题库
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -953,7 +1016,289 @@
 
   <h1>链表</h1>
 
-
+<h2 id="_1">链表<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p><strong>总结：</strong> </p>
+<blockquote>
+<p>1.了解链表的数据结构，以及自己定义链表</p>
+<p>2.学会使用dummyHead 这样能很好处理边界情况。删除链表节点的题型中尤为典型如：19、203</p>
+<p>3.**删除链表节点**类型的题目一定要记得释放节点内存。否则会有内存泄漏。 如82、83</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="cm">/** </span>
+<span class="cm"> * Definition for singly-linked list.</span>
+<span class="cm"> * struct ListNode {</span>
+<span class="cm"> *     int val;</span>
+<span class="cm"> *     ListNode *next;</span>
+<span class="cm"> *     ListNode() : val(0), next(nullptr) {}</span>
+<span class="cm"> *     ListNode(int x) : val(x), next(nullptr) {}</span>
+<span class="cm"> *     ListNode(int x, ListNode *next) : val(x), next(next) {}</span>
+<span class="cm"> * };</span>
+<span class="cm"> */</span><span class="w"></span>
+</code></pre></div>
+<h2 id="_2">题库<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">类型</th>
+<th align="center">重要程度</th>
+<th align="center">难度</th>
+<th align="center">掌握程度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>1.反转链表</strong></td>
+<td align="center">⭐⭐⭐⭐⭐</td>
+<td align="center">⭐⭐⭐</td>
+<td align="center">⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td align="left"><strong>2.回文链表</strong></td>
+<td align="center">⭐⭐⭐⭐⭐</td>
+<td align="center">⭐⭐⭐</td>
+<td align="center">⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td align="left"><strong>3.链表节点删除</strong></td>
+<td align="center">⭐⭐⭐⭐⭐</td>
+<td align="center">⭐⭐⭐</td>
+<td align="center">⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td align="left"><strong>4.合并升序链表</strong></td>
+<td align="center">⭐⭐⭐⭐⭐</td>
+<td align="center">⭐⭐⭐⭐⭐</td>
+<td align="center">⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td align="left"><strong>5.排序链表</strong></td>
+<td align="center">⭐⭐⭐⭐</td>
+<td align="center">⭐⭐⭐⭐⭐</td>
+<td align="center">⭐⭐⭐</td>
+</tr>
+<tr>
+<td align="left"><strong>6.环形链表</strong></td>
+<td align="center">⭐⭐⭐⭐⭐</td>
+<td align="center">⭐⭐⭐</td>
+<td align="center">⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td align="left"><strong>7.链表数据结构</strong></td>
+<td align="center">⭐⭐⭐⭐</td>
+<td align="center">⭐⭐⭐⭐</td>
+<td align="center">⭐⭐⭐</td>
+</tr>
+<tr>
+<td align="left"><strong>8.链表运算</strong></td>
+<td align="center">⭐⭐⭐⭐</td>
+<td align="center">⭐⭐⭐⭐</td>
+<td align="center">⭐⭐⭐</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>题目</th>
+<th align="center">难度&amp;重要程度</th>
+<th align="center">类型</th>
+<th align="center">练习次数</th>
+<th align="center">最后一次情况</th>
+<th align="center">完成时间</th>
+<th align="center">上次时间</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://leetcode-cn.com/problems/reverse-linked-list/">206. 反转链表</a></td>
+<td align="center">Easy &amp;&amp; TOP✅🐴</td>
+<td align="center">Ⅰ</td>
+<td align="center">2</td>
+<td align="center">（迭代与递归）</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td><a href="https://leetcode-cn.com/problems/rotate-list/">61. 旋转链表</a></td>
+<td align="center">Medium</td>
+<td align="center">Ⅰ</td>
+<td align="center">1</td>
+<td align="center">ac(边界调试了一会)</td>
+<td align="center">15min</td>
+<td align="center">2021-3-18</td>
+</tr>
+<tr>
+<td><a href="https://leetcode-cn.com/problems/reverse-linked-list-ii/">92. 反转链表 II</a></td>
+<td align="center">Medium</td>
+<td align="center">Ⅰ</td>
+<td align="center">1☑️</td>
+<td align="center">ac</td>
+<td align="center">30min</td>
+<td align="center">2021-3-18</td>
+</tr>
+<tr>
+<td><a href="https://leetcode-cn.com/problems/palindrome-linked-list/">234. 回文链表</a></td>
+<td align="center">Easy &amp;&amp; HOT100</td>
+<td align="center">Ⅱ</td>
+<td align="center">2☑️</td>
+<td align="center">ac</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td><a href="https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/">19. 删除链表的倒数第 N 个结点</a></td>
+<td align="center">Easy &amp;&amp; HOT100</td>
+<td align="center">Ⅲ</td>
+<td align="center">2☑️</td>
+<td align="center">ac</td>
+<td align="center">5min</td>
+<td align="center">2021-3-18</td>
+</tr>
+<tr>
+<td><a href="https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list-ii/">82. 删除排序链表中的重复元素 II</a></td>
+<td align="center">Med</td>
+<td align="center">Ⅲ</td>
+<td align="center">1☑️</td>
+<td align="center">ac</td>
+<td align="center">10min</td>
+<td align="center">2021-3-18</td>
+</tr>
+<tr>
+<td><a href="https://leetcode-cn.com/problems/remove-linked-list-elements/">203. 移除链表元素</a></td>
+<td align="center">Easy</td>
+<td align="center">Ⅲ</td>
+<td align="center">1☑️</td>
+<td align="center">ac</td>
+<td align="center">3min</td>
+<td align="center">2021-3-18</td>
+</tr>
+<tr>
+<td><a href="https://leetcode-cn.com/problems/merge-two-sorted-lists/">21. 合并两个有序链表</a></td>
+<td align="center">Easy &amp;&amp; HOT100</td>
+<td align="center">Ⅳ</td>
+<td align="center">2☑️</td>
+<td align="center">ac</td>
+<td align="center">5min</td>
+<td align="center">2021-3-10</td>
+</tr>
+<tr>
+<td><a href="https://leetcode-cn.com/problems/merge-k-sorted-lists/">23. 合并K个升序链表</a>⭐</td>
+<td align="center">Hard &amp;&amp; HOT100</td>
+<td align="center">Ⅳ</td>
+<td align="center">1</td>
+<td align="center">ac</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td><a href="https://leetcode-cn.com/problems/sort-list/">148. 排序链表</a>⭐</td>
+<td align="center">Medium &amp;&amp; HOT100</td>
+<td align="center">Ⅴ</td>
+<td align="center">1</td>
+<td align="center">看解答</td>
+<td align="center">...</td>
+<td align="center">...</td>
+</tr>
+<tr>
+<td><a href="https://leetcode-cn.com/problems/linked-list-cycle/">141. 环形链表</a></td>
+<td align="center">Easy &amp;&amp; HOT100</td>
+<td align="center">Ⅵ</td>
+<td align="center">2☑️</td>
+<td align="center">ac</td>
+<td align="center">2min</td>
+<td align="center">2021-3-18</td>
+</tr>
+<tr>
+<td><a href="https://leetcode-cn.com/problems/linked-list-cycle-ii/">142. 环形链表 II</a></td>
+<td align="center">Medium &amp;&amp; HOT100</td>
+<td align="center">Ⅵ</td>
+<td align="center">2☑️</td>
+<td align="center">ac</td>
+<td align="center">5min</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td><a href="https://leetcode-cn.com/problems/intersection-of-two-linked-lists/">160. 相交链表</a>  (同offer52)</td>
+<td align="center">Easy &amp;&amp; HOT100</td>
+<td align="center">Ⅵ</td>
+<td align="center">2☑️</td>
+<td align="center">ac</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td><a href="https://leetcode-cn.com/problems/fu-za-lian-biao-de-fu-zhi-lcof/">剑指 Offer 35. 复杂链表的复制</a>⭐</td>
+<td align="center">剑指offer</td>
+<td align="center">Ⅶ</td>
+<td align="center">1</td>
+<td align="center">看解答</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td><a href="https://leetcode-cn.com/problems/add-two-numbers/">2. 两数相加</a>⭐</td>
+<td align="center">Med &amp;&amp; HOT100</td>
+<td align="center">Ⅷ</td>
+<td align="center">1</td>
+<td align="center">ac</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td><a href="https://leetcode-cn.com/problems/partition-list/">86. 分隔链表</a></td>
+<td align="center">Med</td>
+<td align="center">Ⅷ</td>
+<td align="center">1</td>
+<td align="center">ac</td>
+<td align="center">20min</td>
+<td align="center">2021-3-18</td>
+</tr>
+<tr>
+<td></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
 
 
 

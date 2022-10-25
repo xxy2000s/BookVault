@@ -491,12 +491,38 @@
     双指针
   </a>
   
+    <nav class="md-nav" aria-label="双指针">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    15. 三数之和
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     滑动窗口
   </a>
+  
+    <nav class="md-nav" aria-label="滑动窗口">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#84" class="md-nav__link">
+    84. 柱状图中最大的矩形
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -524,6 +550,13 @@
         <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
     贪心
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    哈希
   </a>
   
 </li>
@@ -941,7 +974,7 @@
   
     <li class="md-nav__item">
       <a href="../../%E6%96%87%E4%BB%B6/JavaGuide%E9%9D%A2%E8%AF%95%E7%AA%81%E5%87%BB.pdf" class="md-nav__link">
-        JavaGuid
+        JavaGuide
       </a>
     </li>
   
@@ -1032,12 +1065,38 @@
     双指针
   </a>
   
+    <nav class="md-nav" aria-label="双指针">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    15. 三数之和
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     滑动窗口
   </a>
+  
+    <nav class="md-nav" aria-label="滑动窗口">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#84" class="md-nav__link">
+    84. 柱状图中最大的矩形
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1069,6 +1128,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    哈希
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1088,11 +1154,207 @@
 
 <h2 id="_1">二分<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <h2 id="_2">双指针<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://leetcode.cn/problems/3sum/">15. 三数之和</a><br /><a href="https://leetcode.cn/problems/two-sum/">1. 两数之和</a><br /><a href="https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/">167. 两数之和 II - 输入有序数组</a></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="15"><a href="https://leetcode.cn/problems/3sum/">15. 三数之和</a><a class="headerlink" href="#15" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>给你一个整数数组 nums ，判断是否存在三元组 [nums[i], nums[j], nums[k]] 满足 i != j、i != k 且 j != k ，同时还满足 nums[i] + nums[j] + nums[k] == 0 。请</p>
+<p>你返回所有和为 0 且不重复的三元组。</p>
+<p>注意：答案中不可以包含重复的三元组。
+</p>
+<p><strong>Follow UP</strong></p>
+<p>两数之和如果数组中含有重复元素呢？HashMap的value存储元素出现次数：要求返回索引的话value改成存储数组？</p>
+<p>然后三数之和去重呢？</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="c1">//先排序然后双指针</span>
+<span class="c1">//关键是去重</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">threeSum</span><span class="p">(</span><span class="kt">int</span><span class="p">[]</span><span class="w"> </span><span class="n">nums</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">Arrays</span><span class="p">.</span><span class="n">sort</span><span class="p">(</span><span class="n">nums</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="c1">//最外层循环，固定的那个数</span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">nums</span><span class="p">.</span><span class="n">length</span><span class="mi">-2</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
+<span class="w">            </span><span class="c1">//简单优化</span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="c1">//第一步去重 (注意写法往前看 )</span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">&gt;</span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="mi">-1</span><span class="p">])</span><span class="w"> </span><span class="k">continue</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="c1">//设置双指针</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nums</span><span class="p">.</span><span class="n">length</span><span class="mi">-1</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="c1">//双指针模板</span>
+<span class="w">            </span><span class="k">while</span><span class="p">(</span><span class="n">left</span><span class="o">&lt;</span><span class="n">right</span><span class="p">){</span><span class="w"></span>
+<span class="w">                </span><span class="kt">int</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nums</span><span class="p">[</span><span class="n">left</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nums</span><span class="p">[</span><span class="n">right</span><span class="p">];</span><span class="w"></span>
+<span class="w">                </span><span class="k">if</span><span class="p">(</span><span class="n">sum</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">){</span><span class="w"></span>
+<span class="w">                    </span><span class="c1">//(更新左指针) 左指针方向去重</span>
+<span class="w">                    </span><span class="k">while</span><span class="p">(</span><span class="n">left</span><span class="o">&lt;</span><span class="n">right</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">nums</span><span class="p">[</span><span class="n">left</span><span class="p">]</span><span class="o">==</span><span class="n">nums</span><span class="p">[</span><span class="o">++</span><span class="n">left</span><span class="p">]);</span><span class="w"></span>
+<span class="w">                </span><span class="p">}</span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">sum</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">){</span><span class="w"></span>
+<span class="w">                    </span><span class="c1">//(更新右指针) 右指针方向去重</span>
+<span class="w">                    </span><span class="k">while</span><span class="p">(</span><span class="n">left</span><span class="o">&lt;</span><span class="n">right</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">nums</span><span class="p">[</span><span class="n">right</span><span class="p">]</span><span class="o">==</span><span class="n">nums</span><span class="p">[</span><span class="o">--</span><span class="n">right</span><span class="p">]);</span><span class="w"></span>
+<span class="w">                </span><span class="p">}</span><span class="k">else</span><span class="p">{</span><span class="w"></span>
+<span class="w">                    </span><span class="c1">//加入数组，更新左右指针并去重处理</span>
+<span class="w">                    </span><span class="n">res</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="n">asList</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="n">nums</span><span class="p">[</span><span class="n">left</span><span class="p">],</span><span class="w"> </span><span class="n">nums</span><span class="p">[</span><span class="n">right</span><span class="p">])</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">                    </span><span class="k">while</span><span class="p">(</span><span class="n">left</span><span class="o">&lt;</span><span class="n">right</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">nums</span><span class="p">[</span><span class="n">left</span><span class="p">]</span><span class="o">==</span><span class="n">nums</span><span class="p">[</span><span class="o">++</span><span class="n">left</span><span class="p">]);</span><span class="w"></span>
+<span class="w">                    </span><span class="k">while</span><span class="p">(</span><span class="n">left</span><span class="o">&lt;</span><span class="n">right</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">nums</span><span class="p">[</span><span class="n">right</span><span class="p">]</span><span class="o">==</span><span class="n">nums</span><span class="p">[</span><span class="o">--</span><span class="n">right</span><span class="p">]);</span><span class="w"></span>
+<span class="w">                </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">res</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 <h2 id="_3">滑动窗口<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://leetcode-cn.com/problems/trapping-rain-water/"> 42. 接雨水（困难）</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/largest-rectangle-in-histogram/">84. 柱状图中最大的矩形</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://leetcode-cn.com/problems/remove-duplicate-letters/"> 316. 去除重复字母（困难）</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://leetcode-cn.com/problems/remove-k-digits/"> 402. 移掉K位数字</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/next-greater-element-ii/">503. 下一个更大元素 II</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://leetcode-cn.com/problems/shortest-unsorted-continuous-subarray/">581. 最短无序连续子数组</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://leetcode-cn.com/problems/daily-temperatures/"> 739. 每日温度（中等）</a></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="84"><a href="https://leetcode.cn/problems/largest-rectangle-in-histogram/">84. 柱状图中最大的矩形</a><a class="headerlink" href="#84" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>给定 <em>n</em> 个非负整数，用来表示柱状图中各个柱子的高度。每个柱子彼此相邻，且宽度为 1 。</p>
+<p>求在该柱状图中，能够勾勒出来的矩形的最大面积。</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="c1">//使用哨兵法，可以普适化，代码更简洁。</span><span class="w"></span>
+<span class="c1">//2哨兵或1哨兵或不用哨兵</span><span class="w"></span>
+
+<span class="c1">//维护一个单调栈，使得栈是单调递增（非严格）的 </span><span class="w"></span>
+<span class="c1">//situation1：</span><span class="w"></span>
+<span class="kd">class</span> <span class="nc">Solution</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">largestRectangleArea</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">heights</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">heights</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">newHeights</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[</span><span class="n">len</span><span class="o">+</span><span class="mi">2</span><span class="o">]</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="c1">//左哨兵防止出现栈为空情况，这时候width其实就是i</span><span class="w"></span>
+<span class="w">        </span><span class="n">newHeights</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="c1">//右哨兵确保栈中元素能全部出栈</span><span class="w"></span>
+<span class="w">        </span><span class="n">newHeights</span><span class="o">[</span><span class="n">len</span><span class="o">+</span><span class="mi">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">len</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
+<span class="w">            </span><span class="n">newHeights</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">heights</span><span class="o">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="c1">//stack存索引，方便计算宽度</span><span class="w"></span>
+<span class="w">        </span><span class="n">Stack</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">st</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Stack</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">st</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">len</span><span class="o">+</span><span class="mi">2</span><span class="p">;</span><span class="o">++</span><span class="n">i</span><span class="p">){</span><span class="w"></span>
+<span class="w">            </span><span class="c1">//如果当前的数小于栈顶（循环执行直到大于），则计算以栈顶处元素为高度的长方形面积</span><span class="w"></span>
+<span class="w">            </span><span class="c1">//因为栈是单增的，所以长方形的左边起始点就是栈顶处索引</span><span class="w"></span>
+<span class="w">            </span><span class="c1">//右边就是当前遍历到的数的索引</span><span class="w"></span>
+<span class="w">            </span><span class="k">while</span><span class="p">(</span><span class="n">newHeights</span><span class="o">[</span><span class="n">i</span><span class="o">]&lt;</span><span class="n">newHeights</span><span class="o">[</span><span class="n">st</span><span class="p">.</span><span class="na">peek</span><span class="p">()</span><span class="o">]</span><span class="p">){</span><span class="w"></span>
+<span class="w">                </span><span class="kt">int</span><span class="w"> </span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newHeights</span><span class="o">[</span><span class="n">st</span><span class="p">.</span><span class="na">pop</span><span class="p">()</span><span class="o">]</span><span class="p">;</span><span class="w"></span>
+<span class="w">                </span><span class="c1">//因为已经pop了，所以要再-1</span><span class="w"></span>
+<span class="w">                </span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="o">-</span><span class="n">st</span><span class="p">.</span><span class="na">peek</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">                </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="w"> </span><span class="n">height</span><span class="o">*</span><span class="n">width</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="n">st</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="n">i</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">res</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="c1">//不加哨兵的方法</span><span class="w"></span>
+<span class="kd">class</span> <span class="nc">Solution</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">largestRectangleArea</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">heights</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">//不加哨兵</span><span class="w"></span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">heights</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">Stack</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">st</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Stack</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">len</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
+<span class="w">            </span><span class="c1">//情形1属于栈未清空则额外加一个i=len时循环计算 </span><span class="w"></span>
+<span class="w">            </span><span class="c1">//情形2属于正常情形出栈计算，且因为没有首哨兵，故要判断栈是否为空</span><span class="w"></span>
+<span class="w">            </span><span class="k">while</span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">st</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">i</span><span class="o">==</span><span class="n">len</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">st</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">heights</span><span class="o">[</span><span class="n">i</span><span class="o">]&lt;</span><span class="n">heights</span><span class="o">[</span><span class="n">st</span><span class="p">.</span><span class="na">peek</span><span class="p">()</span><span class="o">]</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">){</span><span class="w"></span>
+<span class="w">                </span><span class="kt">int</span><span class="w"> </span><span class="n">hi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">heights</span><span class="o">[</span><span class="n">st</span><span class="p">.</span><span class="na">peek</span><span class="p">()</span><span class="o">]</span><span class="p">;</span><span class="w"></span>
+<span class="w">                </span><span class="n">st</span><span class="p">.</span><span class="na">pop</span><span class="p">();</span><span class="w"></span>
+<span class="w">                </span><span class="c1">//根据栈是否为空判断宽度</span><span class="w"></span>
+<span class="w">                </span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">st</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">()</span><span class="o">?</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">-</span><span class="n">st</span><span class="p">.</span><span class="na">peek</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">                </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="w"> </span><span class="n">hi</span><span class="o">*</span><span class="n">width</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="n">st</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="n">i</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">res</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 <h2 id="_4">前缀和<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <h2 id="_5">单调栈<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <h2 id="_6">分治<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <h2 id="_7">贪心<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h2 id="_8">哈希<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://leetcode.cn/problems/first-missing-positive/">41. 缺失的第一个正数</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-the-duplicate-number/">287. 寻找重复数</a></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
 
 

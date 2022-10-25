@@ -1,0 +1,1409 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="xxy2000s">
+      
+      
+        <link rel="canonical" href="http://md.xiaxuyang.com/%E6%96%87%E4%BB%B6/SQL%E5%AE%9E%E6%88%98/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
+    
+    
+      
+        <title>SQL实战 - xxy's md</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.20d9efc8.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="xxy&#39;s md" class="md-header__button md-logo" aria-label="xxy's md" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            xxy's md
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              SQL实战
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="xxy&#39;s md" class="md-nav__button md-logo" aria-label="xxy's md" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    xxy's md
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        前言
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          工具
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="工具" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          工具
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%B7%A5%E5%85%B7/Git/" class="md-nav__link">
+        Git
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%B7%A5%E5%85%B7/%E8%AE%BA%E6%96%87/" class="md-nav__link">
+        论文
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%B7%A5%E5%85%B7/%E7%AC%94%E8%AE%B0%E7%B3%BB%E7%BB%9F/" class="md-nav__link">
+        笔记系统
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          开发
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="开发" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          开发
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%BC%80%E5%8F%91/Java/" class="md-nav__link">
+        Java
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%BC%80%E5%8F%91/Go/" class="md-nav__link">
+        Go
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%BC%80%E5%8F%91/Python/" class="md-nav__link">
+        Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%BC%80%E5%8F%91/C%2B%2B/" class="md-nav__link">
+        C++
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          算法
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="算法" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          算法
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AE%97%E6%B3%95/%E5%A4%A7%E7%BA%B2/" class="md-nav__link">
+        大纲汇总
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="md-nav__link">
+        动态规划
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AE%97%E6%B3%95/%E5%9B%9E%E6%BA%AF/" class="md-nav__link">
+        回溯
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AE%97%E6%B3%95/%E9%AB%98%E9%A2%91%E9%A2%98/" class="md-nav__link">
+        高频题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AE%97%E6%B3%95/%E5%9F%BA%E7%A1%80%E6%8A%80%E5%B7%A7/" class="md-nav__link">
+        基础技巧
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AE%97%E6%B3%95/%E7%BB%8F%E9%AA%8C/" class="md-nav__link">
+        经验
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AE%97%E6%B3%95/%E9%93%BE%E8%A1%A8/" class="md-nav__link">
+        链表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F/" class="md-nav__link">
+        排序
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AE%97%E6%B3%95/%E8%AE%BE%E8%AE%A1%E9%A2%98/" class="md-nav__link">
+        设计题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AE%97%E6%B3%95/%E6%A0%91/" class="md-nav__link">
+        树
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2/" class="md-nav__link">
+        搜索
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AE%97%E6%B3%95/%E4%BD%8D%E8%BF%90%E7%AE%97/" class="md-nav__link">
+        位运算
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AE%97%E6%B3%95/%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97/" class="md-nav__link">
+        栈与队列
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AE%97%E6%B3%95/%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="md-nav__link">
+        字符串
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_15" type="checkbox" id="__nav_4_15" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_15">
+          题集
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="题集" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_15">
+          <span class="md-nav__icon md-icon"></span>
+          题集
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../题集/算法系统复习.md" class="md-nav__link">
+        算法系统复习
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../题集/常用STL.md" class="md-nav__link">
+        常用STL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../题集/力扣HOT100.md" class="md-nav__link">
+        力扣HOT100
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          面试
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="面试" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          面试
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9D%A2%E8%AF%95/%E6%A0%A1%E6%8B%9BLeetCode%E7%B2%BE%E9%80%89%E9%A2%98%E7%9B%AE/" class="md-nav__link">
+        精选Leetcode
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9D%A2%E8%AF%95/%E6%A0%A1%E6%8B%9B%E5%A4%A7%E5%8E%82%E9%9D%A2%E7%BB%8F/" class="md-nav__link">
+        大厂面经
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9D%A2%E8%AF%95/%E6%A0%A1%E6%8B%9B%E5%A4%A7%E5%8E%82%E7%AE%97%E6%B3%95%E9%A2%98%E7%9B%AE/" class="md-nav__link">
+        面试题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9D%A2%E8%AF%95/%E6%A0%A1%E6%8B%9B%E9%AB%98%E9%A2%91%E6%99%BA%E5%8A%9B%E9%A2%98/" class="md-nav__link">
+        智力题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9D%A2%E8%AF%95/%E6%A0%A1%E6%8B%9B%E5%90%84%E5%85%AC%E5%8F%B8%E6%8A%95%E7%AE%80%E5%8E%86%E5%AE%98%E6%96%B9%E5%9C%B0%E5%9D%80/" class="md-nav__link">
+        投简历
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaAPI/" class="md-nav__link">
+        JavaAPI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/" class="md-nav__link">
+        Linux
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          文件
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="文件" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          文件
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Linux%E5%A4%A7%E5%85%A8.pdf" class="md-nav__link">
+        Linux大全
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Java%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E6%B1%87%E6%80%BB.pdf" class="md-nav__link">
+        Java开源项目汇总
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../JavaGuide%E9%9D%A2%E8%AF%95%E7%AA%81%E5%87%BB.pdf" class="md-nav__link">
+        JavaGuide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020java%E9%9D%A2%E8%AF%95%E9%A2%98.pdf" class="md-nav__link">
+        Java面试题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Java%E5%BC%80%E5%8F%91%2B%E8%87%AA%E5%AD%A6%E8%B7%AF%E7%BA%BF%2B%E7%9F%A5%E8%AF%86%E7%82%B9%E5%A4%A7%E6%A2%B3%E7%90%86.pdf" class="md-nav__link">
+        Java学习路线
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cookbook.pdf" class="md-nav__link">
+        Cookbook
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    基本操作
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    数据库操作
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    表的操作
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    数据操作
+  </a>
+  
+    <nav class="md-nav" aria-label="数据操作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    查询专题
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    视图
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    事务
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    索引
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    账户管理
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    主从数据库
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    Python与数据库交互
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>SQL实战</h1>
+
+<h3 id="_1">基本操作<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="cm">/* Windows服务 */</span><span class="w"></span>
+<span class="c1">-- 启动MySQL</span><span class="w"></span>
+<span class="w">    </span><span class="n">net</span><span class="w"> </span><span class="k">start</span><span class="w"> </span><span class="n">mysql</span><span class="w"></span>
+<span class="c1">-- 创建Windows服务</span><span class="w"></span>
+<span class="w">    </span><span class="n">sc</span><span class="w"> </span><span class="k">create</span><span class="w"> </span><span class="n">mysql</span><span class="w"> </span><span class="n">binPath</span><span class="o">=</span><span class="w"> </span><span class="n">mysqld_bin_path</span><span class="p">(</span><span class="n">注意：等号与值之间有空格</span><span class="p">)</span><span class="w"></span>
+<span class="cm">/* 连接与断开服务器 */</span><span class="w"></span>
+<span class="w">    </span><span class="n">mysql</span><span class="w"> </span><span class="o">-</span><span class="n">h</span><span class="w"> </span><span class="n">地址</span><span class="w"> </span><span class="o">-</span><span class="n">P</span><span class="w"> </span><span class="n">端口</span><span class="w"> </span><span class="o">-</span><span class="n">u</span><span class="w"> </span><span class="n">用户名</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="w"> </span><span class="n">密码</span><span class="w"></span>
+<span class="w">    </span><span class="k">SHOW</span><span class="w"> </span><span class="k">PROCESSLIST</span><span class="w"> </span><span class="c1">-- 显示哪些线程正在运行</span><span class="w"></span>
+<span class="w">    </span><span class="k">SHOW</span><span class="w"> </span><span class="k">VARIABLES</span><span class="w"> </span><span class="c1">-- 显示系统变量信息</span><span class="w"></span>
+</code></pre></div>
+<h3 id="_2">数据库操作<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="cm">/* 数据库操作 */</span><span class="w"> </span><span class="o">---------------------</span><span class="w"></span>
+<span class="c1">-- 查看当前有哪些数据库</span><span class="w"></span>
+<span class="w">    </span><span class="k">show</span><span class="w"> </span><span class="k">databases</span><span class="p">;</span><span class="w"></span>
+<span class="c1">-- 查看当前数据库</span><span class="w"></span>
+<span class="w">    </span><span class="k">select</span><span class="w"> </span><span class="k">database</span><span class="p">();</span><span class="w">   </span><span class="c1">-- ··select 一般都是操作函数 类似的如下：</span><span class="w"></span>
+<span class="w">    </span><span class="c1">-- 显示当前时间、用户、数据库版本</span><span class="w"></span>
+<span class="w">    </span><span class="k">select</span><span class="w"> </span><span class="nf">now</span><span class="p">();</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="k">user</span><span class="p">();</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="nf">version</span><span class="p">();</span><span class="w"></span>
+<span class="c1">-- 建立一个数据库</span><span class="w"></span>
+<span class="w">    </span><span class="k">create</span><span class="w"> </span><span class="k">database</span><span class="w"> </span><span class="err">[</span><span class="k">if</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">exists</span><span class="err">]</span><span class="w"> </span><span class="n">nba</span><span class="w"> </span><span class="k">charset</span><span class="o">=</span><span class="n">utf8</span><span class="p">;</span><span class="w"></span>
+<span class="c1">-- 查看当前库的创建信息</span><span class="w"></span>
+<span class="w">    </span><span class="k">show</span><span class="w"> </span><span class="k">create</span><span class="w"> </span><span class="k">database</span><span class="w"> </span><span class="n">nbateam</span><span class="p">;</span><span class="w"></span>
+<span class="c1">-- 删除库</span><span class="w"></span>
+<span class="w">    </span><span class="k">drop</span><span class="w"> </span><span class="k">database</span><span class="w"> </span><span class="err">[</span><span class="k">if</span><span class="w"> </span><span class="k">exists</span><span class="err">]</span><span class="w"> </span><span class="n">nbateam</span><span class="p">;</span><span class="w"></span>
+<span class="c1">-- 选取数据库</span><span class="w"></span>
+<span class="w">    </span><span class="k">use</span><span class="w"> </span><span class="n">nbateam</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<h3 id="_3">表的操作<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="cm">/* 表操作 */</span><span class="w"></span>
+<span class="c1">-- 查看当前数据库下有哪些表</span><span class="w"></span>
+<span class="w">    </span><span class="k">show</span><span class="w"> </span><span class="k">tables</span><span class="p">;</span><span class="w"></span>
+<span class="c1">-- 建立一个表</span><span class="w"></span>
+<span class="w">    </span><span class="k">create</span><span class="w"> </span><span class="err">[</span><span class="k">temporary</span><span class="err">]</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="err">[</span><span class="k">if</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">exists</span><span class="err">]</span><span class="w"> </span><span class="err">[</span><span class="n">库名</span><span class="p">.</span><span class="err">]</span><span class="n">GSW</span><span class="p">(</span><span class="n">表的结构定义</span><span class="p">)</span><span class="w"> </span><span class="err">[</span><span class="n">表选项</span><span class="err">]</span><span class="w"></span>
+<span class="w">    </span><span class="c1">-- 实例</span><span class="w"></span>
+<span class="w">    </span><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">GSW</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="k">unsigned</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="no">null</span><span class="w"> </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="k">auto_increment</span><span class="p">,</span><span class="w"></span>
+<span class="w">     </span><span class="k">name</span><span class="w"> </span><span class="kt">varchar</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="no">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">     </span><span class="n">age</span><span class="w"> </span><span class="kt">tinyint</span><span class="w"> </span><span class="k">unsigned</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="no">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">     </span><span class="n">num</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="k">unsigned</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="no">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">     </span><span class="n">position</span><span class="w"> </span><span class="kt">varchar</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="no">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">     </span><span class="n">high</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="k">unsigned</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="no">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">     </span><span class="n">weight</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="k">unsigned</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="no">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">     </span><span class="n">birthday</span><span class="w"> </span><span class="kt">date</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="s1">&#39;2000-01-01&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">     </span><span class="n">salary</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="k">unsigned</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="no">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">     </span><span class="n">is_old</span><span class="w"> </span><span class="kt">bit</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">    </span><span class="p">);</span><span class="w"></span>
+
+<span class="c1">-- 表选项</span><span class="w"></span>
+<span class="w">    </span><span class="c1">-- 字符集</span><span class="w"></span>
+<span class="w">        </span><span class="k">charset</span><span class="o">=</span><span class="n">utf8</span><span class="p">(</span><span class="n">默认latin</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="c1">-- 存储引擎</span><span class="w"></span>
+<span class="w">        </span><span class="k">engine</span><span class="o">=</span><span class="n">InnoDB</span><span class="w"></span>
+<span class="w">        </span><span class="n">表在管理数据时采用的不同的数据结构，结构不同会导致处理方式、提供的特性操作等不同</span><span class="w"></span>
+<span class="w">        </span><span class="n">常见的引擎：InnoDB</span><span class="w"> </span><span class="n">MyISAM</span><span class="w"> </span><span class="k">Memory</span><span class="o">/</span><span class="n">Heap</span><span class="w"> </span><span class="n">BDB</span><span class="w"> </span><span class="k">Merge</span><span class="w"> </span><span class="n">Example</span><span class="w"> </span><span class="n">CSV</span><span class="w"> </span><span class="n">MaxDB</span><span class="w">                         </span><span class="n">Archive</span><span class="w"></span>
+<span class="w">        </span><span class="n">不同的引擎在保存表的结构和数据时采用不同的方式</span><span class="w"></span>
+<span class="w">        </span><span class="n">MyISAM表文件含义：</span><span class="p">.</span><span class="n">frm表定义，</span><span class="p">.</span><span class="n">MYD表数据，</span><span class="p">.</span><span class="n">MYI表索引</span><span class="w"></span>
+<span class="w">        </span><span class="n">InnoDB表文件含义：</span><span class="p">.</span><span class="n">frm表定义，表空间数据和日志文件</span><span class="w"></span>
+<span class="w">        </span><span class="k">SHOW</span><span class="w"> </span><span class="k">ENGINES</span><span class="w"> </span><span class="c1">-- 显示存储引擎的状态信息</span><span class="w"></span>
+<span class="w">        </span><span class="k">SHOW</span><span class="w"> </span><span class="k">ENGINE</span><span class="w"> </span><span class="n">引擎名</span><span class="w"> </span><span class="err">{</span><span class="k">LOGS</span><span class="o">|</span><span class="k">STATUS</span><span class="err">}</span><span class="w"> </span><span class="c1">-- 显示存储引擎的日志或状态信息</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">-- 自增起始数</span><span class="w"></span>
+<span class="w">        </span><span class="k">auto_increment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">行数</span><span class="w"></span>
+<span class="w">    </span><span class="c1">-- 数据文件目录</span><span class="w"></span>
+<span class="w">        </span><span class="k">data</span><span class="w"> </span><span class="k">directory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;目录&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="c1">-- 索引文件目录</span><span class="w"></span>
+<span class="w">        </span><span class="k">index</span><span class="w"> </span><span class="k">directory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;目录&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="c1">-- 表注释</span><span class="w"></span>
+<span class="w">        </span><span class="k">comment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;string&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="c1">-- 分区选项</span><span class="w"></span>
+<span class="w">        </span><span class="k">partition</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="p">....(</span><span class="n">见手册</span><span class="p">)</span><span class="w"></span>
+
+
+<span class="c1">-- 查看表 </span><span class="w"></span>
+<span class="w">    </span><span class="k">show</span><span class="w"> </span><span class="k">tables</span><span class="err">[</span><span class="k">like</span><span class="w"> </span><span class="s1">&#39;pattern&#39;</span><span class="err">]</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">show</span><span class="w"> </span><span class="k">tables</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">库名；</span><span class="w"></span>
+<span class="c1">-- 查看表机构</span><span class="w"></span>
+<span class="w">    </span><span class="k">show</span><span class="w"> </span><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">表名</span><span class="w"></span>
+<span class="w">    </span><span class="k">desc</span><span class="w"> </span><span class="n">表名</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">describe</span><span class="w"> </span><span class="n">··</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">explain</span><span class="w"> </span><span class="n">··</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">show</span><span class="w"> </span><span class="k">columns</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">··</span><span class="err">[</span><span class="k">like</span><span class="w">              </span><span class="s1">&#39;pattern&#39;</span><span class="err">]</span><span class="w"></span>
+<span class="w">    </span><span class="k">show</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="k">status</span><span class="w"> </span><span class="err">[</span><span class="k">from</span><span class="w"> </span><span class="n">db_name</span><span class="err">]</span><span class="w"> </span><span class="err">[</span><span class="k">like</span><span class="w"> </span><span class="s1">&#39;pattern&#39;</span><span class="err">]</span><span class="w"></span>
+<span class="c1">-- 修改表   修改表都是alter table</span><span class="w"></span>
+<span class="w">    </span><span class="c1">-- 修改表本身的选项</span><span class="w"></span>
+<span class="w">        </span><span class="k">alter</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">··</span><span class="w"> </span><span class="n">表的选项</span><span class="w"></span>
+<span class="w">        </span><span class="n">eg</span><span class="o">:</span><span class="w"> </span><span class="k">alter</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">··</span><span class="w"> </span><span class="k">engine</span><span class="o">=</span><span class="n">myisam</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="c1">-- 添加字段</span><span class="w"></span>
+<span class="w">        </span><span class="k">alter</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">··</span><span class="w"> </span><span class="k">add</span><span class="w"> </span><span class="n">列名</span><span class="w"> </span><span class="n">类型</span><span class="w"></span>
+<span class="w">    </span><span class="c1">-- 修改字段：不重命名</span><span class="w"></span>
+<span class="w">        </span><span class="k">alter</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">··</span><span class="w"> </span><span class="k">modify</span><span class="w"> </span><span class="n">列名</span><span class="w"> </span><span class="n">类型及约束</span><span class="w"></span>
+<span class="w">    </span><span class="c1">-- 修改字段段：重命名</span><span class="w"></span>
+<span class="w">        </span><span class="k">alter</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">··</span><span class="w"> </span><span class="k">change</span><span class="w"> </span><span class="n">原名</span><span class="w"> </span><span class="n">新名</span><span class="w"> </span><span class="n">类型及约束</span><span class="w"></span>
+<span class="w">    </span><span class="c1">-- 删除字段</span><span class="w"></span>
+<span class="w">        </span><span class="k">alter</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">··</span><span class="w"> </span><span class="k">drop</span><span class="w"> </span><span class="n">字段名</span><span class="w"></span>
+<span class="w">    </span><span class="c1">-- 对表进行重命名</span><span class="w"></span>
+<span class="w">        </span><span class="k">rename</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">··</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">新表名</span><span class="w"></span>
+<span class="w">        </span><span class="k">rename</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">··</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">库名</span><span class="p">.</span><span class="n">表名</span><span class="w"> </span><span class="p">(</span><span class="n">将表移动到另一个数据库</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="c1">-- rename 可以交换两个表名</span><span class="w"></span>
+
+
+
+<span class="c1">-- 删除表</span><span class="w"></span>
+<span class="w">    </span><span class="k">drop</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="err">[</span><span class="k">if</span><span class="w"> </span><span class="k">exists</span><span class="err">]</span><span class="w"> </span><span class="n">··</span><span class="w"></span>
+<span class="c1">-- 清空表数据</span><span class="w"></span>
+<span class="w">    </span><span class="k">truncate</span><span class="w"> </span><span class="err">[</span><span class="k">table</span><span class="err">]</span><span class="w"> </span><span class="n">··</span><span class="w"></span>
+<span class="c1">-- 复制表结构</span><span class="w"></span>
+<span class="w">    </span><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">新表</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="n">··</span><span class="w"></span>
+<span class="c1">-- 复制表结构和数据</span><span class="w"></span>
+<span class="w">    </span><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">新表</span><span class="w"> </span><span class="err">[</span><span class="k">as</span><span class="err">]</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">要复制的表名</span><span class="w"> </span>
+
+<span class="c1">-- 检查表是否有错误</span><span class="w"></span>
+<span class="w">    </span><span class="k">CHECK</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">tbl_name</span><span class="w"> </span><span class="err">[</span><span class="p">,</span><span class="w"> </span><span class="n">tbl_name</span><span class="err">]</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="err">[</span><span class="k">option</span><span class="err">]</span><span class="w"> </span><span class="p">...</span><span class="w"></span>
+<span class="c1">-- 优化表</span><span class="w"></span>
+<span class="w">    </span><span class="k">OPTIMIZE</span><span class="w"> </span><span class="err">[</span><span class="k">LOCAL</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">NO_WRITE_TO_BINLOG</span><span class="err">]</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">tbl_name</span><span class="w"> </span><span class="err">[</span><span class="p">,</span><span class="w"> </span><span class="n">tbl_name</span><span class="err">]</span><span class="w"> </span><span class="p">...</span><span class="w"></span>
+<span class="c1">-- 修复表</span><span class="w"></span>
+<span class="w">    </span><span class="k">REPAIR</span><span class="w"> </span><span class="err">[</span><span class="k">LOCAL</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">NO_WRITE_TO_BINLOG</span><span class="err">]</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">tbl_name</span><span class="w"> </span><span class="err">[</span><span class="p">,</span><span class="w"> </span><span class="n">tbl_name</span><span class="err">]</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="err">[</span><span class="k">QUICK</span><span class="err">]</span><span class="w"> </span><span class="err">[</span><span class="k">EXTENDED</span><span class="err">]</span><span class="w"> </span><span class="err">[</span><span class="k">USE_FRM</span><span class="err">]</span><span class="w"></span>
+<span class="c1">-- 分析表</span><span class="w"></span>
+<span class="w">    </span><span class="k">ANALYZE</span><span class="w"> </span><span class="err">[</span><span class="k">LOCAL</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">NO_WRITE_TO_BINLOG</span><span class="err">]</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">tbl_name</span><span class="w"> </span><span class="err">[</span><span class="p">,</span><span class="w"> </span><span class="n">tbl_name</span><span class="err">]</span><span class="w"> </span><span class="p">...</span><span class="w">    </span>
+</code></pre></div>
+<h3 id="_4">数据操作<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="cm">/* 数据操作 */</span><span class="w"></span>
+<span class="c1">-- 增</span><span class="w"></span>
+<span class="w">    </span><span class="k">insert</span><span class="w"> </span><span class="err">[</span><span class="k">into</span><span class="err">]</span><span class="w"> </span><span class="n">··</span><span class="w"> </span><span class="err">[</span><span class="p">(</span><span class="n">字段列表</span><span class="p">)</span><span class="err">]</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="n">值列表</span><span class="p">)</span><span class="err">[</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">值列表</span><span class="p">)</span><span class="n">，</span><span class="w"> </span><span class="p">...</span><span class="err">]</span><span class="w"> </span>
+<span class="w">        </span><span class="c1">-- replace 和 insert 完全一致，可互换</span><span class="w"></span>
+<span class="w">    </span><span class="k">insert</span><span class="w"> </span><span class="err">[</span><span class="k">into</span><span class="err">]</span><span class="w"> </span><span class="n">··</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">字段名</span><span class="o">=</span><span class="n">值</span><span class="err">[</span><span class="p">,</span><span class="w"> </span><span class="n">字段名</span><span class="o">=</span><span class="n">值，</span><span class="w"> </span><span class="p">...</span><span class="err">]</span><span class="w"></span>
+<span class="c1">-- 查</span><span class="w"></span>
+<span class="w">      </span><span class="k">SELECT</span><span class="w"> </span><span class="n">字段列表</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">表名</span><span class="err">[</span><span class="w"> </span><span class="n">其他子句</span><span class="err">]</span><span class="w"></span>
+<span class="w">        </span><span class="c1">-- 可来自多个表的多个字段</span><span class="w"></span>
+<span class="w">        </span><span class="c1">-- 其他子句可以不使用</span><span class="w"></span>
+<span class="w">        </span><span class="c1">-- 字段列表可以用*代替，表示所有字段</span><span class="w"></span>
+<span class="c1">-- 删</span><span class="w"></span>
+<span class="w">    </span><span class="k">delete</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">表名</span><span class="err">[</span><span class="n">其他子句</span><span class="err">]</span><span class="w"></span>
+<span class="w">        </span><span class="n">如无条件子句，则全部删除</span><span class="w"></span>
+<span class="c1">-- 改</span><span class="w"></span>
+<span class="w">    </span><span class="k">update</span><span class="w"> </span><span class="n">··</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">字段名</span><span class="o">=</span><span class="n">新值</span><span class="err">[</span><span class="p">,</span><span class="w"> </span><span class="n">字段名</span><span class="o">=</span><span class="n">新值</span><span class="p">...</span><span class="err">]</span><span class="w"> </span><span class="err">[</span><span class="n">更新条件</span><span class="err">]</span><span class="w"></span>
+
+<span class="c1">-- 数据实例</span><span class="w"></span>
+<span class="w">    </span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">GSW</span><span class="w"> </span><span class="k">values</span><span class="w"> </span>
+<span class="w">    </span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;Stephen_Curry&#39;</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="s1">&#39;PG&#39;</span><span class="p">,</span><span class="mi">191</span><span class="p">,</span><span class="mi">190</span><span class="p">,</span><span class="s1">&#39;1988-3-14&#39;</span><span class="p">,</span><span class="mi">4023</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;Klay_Thompson&#39;</span><span class="p">,</span><span class="mi">29</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="s1">&#39;SG&#39;</span><span class="p">,</span><span class="mi">201</span><span class="p">,</span><span class="mi">215</span><span class="p">,</span><span class="s1">&#39;1990-02-08&#39;</span><span class="p">,</span><span class="mi">3274</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;D&#39;Angelo_Russell&quot;</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="s1">&#39;PG&#39;</span><span class="p">,</span><span class="mi">196</span><span class="p">,</span><span class="mi">195</span><span class="p">,</span><span class="s1">&#39;1996-02-23&#39;</span><span class="p">,</span><span class="mi">2728</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;Draymond_Green&#39;</span><span class="p">,</span><span class="mi">29</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="s1">&#39;SF&#39;</span><span class="p">,</span><span class="mi">201</span><span class="p">,</span><span class="mi">230</span><span class="p">,</span><span class="s1">&#39;1990-03-04&#39;</span><span class="p">,</span><span class="mi">1854</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;Willie_Cauley_Stein&#39;</span><span class="p">,</span><span class="mi">26</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">,</span><span class="mi">213</span><span class="p">,</span><span class="mi">240</span><span class="p">,</span><span class="s1">&#39;1993-08-18&#39;</span><span class="p">,</span><span class="mi">470</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;Kevon_Looney&#39;</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">,</span><span class="mi">206</span><span class="p">,</span><span class="mi">220</span><span class="p">,</span><span class="s1">&#39;1996-02-06&#39;</span><span class="p">,</span><span class="mi">462</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;Alec_Burks&#39;</span><span class="p">,</span><span class="mi">28</span><span class="p">,</span><span class="mi">35</span><span class="p">,</span><span class="s1">&#39;SG&#39;</span><span class="p">,</span><span class="mi">198</span><span class="p">,</span><span class="mi">214</span><span class="p">,</span><span class="s1">&#39;1991-07-20&#39;</span><span class="p">,</span><span class="mi">232</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;Jordan_Poole&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;PG&#39;</span><span class="p">,</span><span class="mi">196</span><span class="p">,</span><span class="mi">194</span><span class="p">,</span><span class="s1">&#39;1999-06-19&#39;</span><span class="p">,</span><span class="mi">196</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;Jacob_Evans&#39;</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="s1">&#39;PG&#39;</span><span class="p">,</span><span class="mi">198</span><span class="p">,</span><span class="mi">210</span><span class="p">,</span><span class="s1">&#39;1997-6-18&#39;</span><span class="p">,</span><span class="mi">192</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;Omari_Spellman&#39;</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span><span class="s1">&#39;SF&#39;</span><span class="p">,</span><span class="mi">206</span><span class="p">,</span><span class="mi">245</span><span class="p">,</span><span class="s1">&#39;1997-07-21&#39;</span><span class="p">,</span><span class="mi">190</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;Glenn_Robinson&#39;</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="s1">&#39;SF&#39;</span><span class="p">,</span><span class="mi">198</span><span class="p">,</span><span class="mi">222</span><span class="p">,</span><span class="s1">&#39;1994-01-08&#39;</span><span class="p">,</span><span class="mi">188</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;Alfonzo_Mckinnie&#39;</span><span class="p">,</span><span class="mi">27</span><span class="p">,</span><span class="mi">28</span><span class="p">,</span><span class="s1">&#39;SF&#39;</span><span class="p">,</span><span class="mi">203</span><span class="p">,</span><span class="mi">215</span><span class="p">,</span><span class="s1">&#39;1992-09-17&#39;</span><span class="p">,</span><span class="mi">142</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;Alen_Smailagic&#39;</span><span class="p">,</span><span class="mi">19</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="s1">&#39;PF&#39;</span><span class="p">,</span><span class="mi">208</span><span class="p">,</span><span class="mi">216</span><span class="p">,</span><span class="s1">&#39;2000-08-18&#39;</span><span class="p">,</span><span class="mi">89</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;Marcus_Derrickson&#39;</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="s1">&#39;SF&#39;</span><span class="p">,</span><span class="mi">201</span><span class="p">,</span><span class="mi">249</span><span class="p">,</span><span class="s1">&#39;1996-02-01&#39;</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;Damion_Lee&#39;</span><span class="p">,</span><span class="mi">27</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;SG&#39;</span><span class="p">,</span><span class="mi">198</span><span class="p">,</span><span class="mi">210</span><span class="p">,</span><span class="s1">&#39;1992-10-21&#39;</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;Xuyang_Xia&#39;</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span><span class="s1">&#39;SG&#39;</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">148</span><span class="p">,</span><span class="s1">&#39;2000-10-04&#39;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+
+
+<span class="c1">-- 数据备份</span><span class="w"></span>
+<span class="w">    </span><span class="n">mysqldump</span><span class="w"> </span><span class="o">-</span><span class="n">uroot</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="w"> </span><span class="n">数据库名</span><span class="w"> </span><span class="o">&gt;</span><span class="p">(</span><span class="n">重定向符，导入数据</span><span class="p">)</span><span class="w"> </span><span class="n">python</span><span class="p">.</span><span class="n">slq</span><span class="p">;</span><span class="w"></span>
+
+<span class="c1">-- 数据恢复</span><span class="w"></span>
+<span class="w">    </span><span class="n">连接mysql，创建新的数据库</span><span class="w"></span>
+<span class="w">    </span><span class="n">退出连接，执行如下命令</span><span class="w"></span>
+<span class="w">    </span><span class="n">mysql</span><span class="w"> </span><span class="o">-</span><span class="n">uroot</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="w"> </span><span class="n">新数据库库名</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">python</span><span class="p">.</span><span class="k">sql</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<h4 id="_5">查询专题<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1">-- 条件查询</span><span class="w"></span>
+<span class="w">    </span><span class="c1">-- 逻辑运算符  (and, or, not)</span><span class="w"></span>
+<span class="c1">-- 模糊查询 </span><span class="w"></span>
+<span class="w">    </span><span class="c1">-- like</span><span class="w"></span>
+<span class="w">    </span><span class="c1">-- %替换一个或多个（0个也行）</span><span class="w"></span>
+<span class="w">    </span><span class="c1">-- _替换一个</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">-- rlike 正则</span><span class="w"></span>
+<span class="c1">-- 范围查询</span><span class="w"></span>
+<span class="w">    </span><span class="c1">-- (in, not in, between ... and, not between ... and )</span><span class="w"></span>
+<span class="w">    </span><span class="k">select</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">GSW</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="err">[</span><span class="k">not</span><span class="err">]</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="p">(</span><span class="mi">34</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">23</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">select</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">GSW</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="err">[</span><span class="k">not</span><span class="err">]</span><span class="w"> </span><span class="k">between</span><span class="w"> </span><span class="mi">18</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="mi">28</span><span class="w"></span>
+<span class="c1">-- 空判断</span><span class="w"></span>
+<span class="w">    </span><span class="c1">-- is null, is not null</span><span class="w"></span>
+
+<span class="c1">-- 排序</span><span class="w"></span>
+<span class="w">    </span><span class="c1">-- order by 字段(多个字段)</span><span class="w"></span>
+<span class="w">    </span><span class="c1">-- asc 升序(默认)</span><span class="w"></span>
+<span class="w">    </span><span class="c1">-- desc 降序</span><span class="w"></span>
+
+<span class="c1">-- 聚合函数</span><span class="w"></span>
+<span class="w">    </span><span class="c1">-- 总数count</span><span class="w"></span>
+<span class="w">    </span><span class="c1">-- max</span><span class="w"></span>
+<span class="w">    </span><span class="c1">-- min</span><span class="w"></span>
+<span class="w">    </span><span class="c1">-- avg</span><span class="w"></span>
+<span class="w">    </span><span class="c1">-- sum</span><span class="w"></span>
+<span class="w">    </span><span class="c1">-- round</span><span class="w"></span>
+
+<span class="c1">-- 分组(和聚合函数一起使用)</span><span class="w"></span>
+<span class="w">    </span><span class="c1">-- group by</span><span class="w"></span>
+<span class="w">        </span><span class="c1">-- eg:select position, count(*) from GSW group by position;</span><span class="w"></span>
+<span class="w">            </span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">后面的字段为区分依据，在select后面只能接该字段</span><span class="w"></span>
+<span class="w">    </span><span class="c1">-- group_concat()  (括号里面为想查询的字段信息) </span><span class="w"></span>
+<span class="w">        </span><span class="c1">-- 查看组（表）里信息</span><span class="w"></span>
+<span class="w">    </span><span class="c1">-- having</span><span class="w"></span>
+<span class="w">        </span><span class="c1">-- 在新查询的表出来后，having后为附加条件，同where的筛选功能</span><span class="w"></span>
+<span class="w">            </span><span class="k">having</span><span class="w"> </span><span class="n">的附加条件必须为新表的字段</span><span class="w"></span>
+
+<span class="c1">-- 分页</span><span class="w"></span>
+<span class="w">    </span><span class="c1">-- limit start, count (必须为数，不可以为表达式)</span><span class="w"></span>
+<span class="w">        </span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="n">2n</span><span class="p">,</span><span class="n">n</span><span class="p">)....</span><span class="w"></span>
+<span class="w">        </span><span class="c1">#limit 必须在语句最后  </span><span class="w"></span>
+
+<span class="c1">-- 链接查询（多个表合并数据）</span><span class="w"></span>
+<span class="w">    </span><span class="c1">-- inner join ... on</span><span class="w"></span>
+<span class="w">        </span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">GSW</span><span class="w"> </span><span class="k">inner</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="k">status</span><span class="p">;</span><span class="w">  </span>
+<span class="w">        </span><span class="n">不用on条件的话会出现重复数据，无法对应</span><span class="w"></span>
+<span class="w">        </span><span class="c1">-- 查询</span><span class="w"></span>
+<span class="w">        </span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">GSW</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="k">inner</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="k">status</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">g</span><span class="p">.</span><span class="n">play_id</span><span class="o">=</span><span class="n">s</span><span class="p">.</span><span class="n">id</span><span class="p">;</span><span class="w"> </span>
+<span class="w">        </span><span class="k">select</span><span class="w"> </span><span class="n">g</span><span class="p">.</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="k">name</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">GSW</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="k">inner</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="k">status</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">g</span><span class="p">.</span><span class="n">play_id</span><span class="w">                </span><span class="o">=</span><span class="n">s</span><span class="p">.</span><span class="n">id</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="c1">-- left join</span><span class="w"></span>
+<span class="w">        </span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">GSW</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="k">left</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="k">status</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">g</span><span class="p">.</span><span class="n">play_id</span><span class="o">=</span><span class="n">s</span><span class="p">.</span><span class="n">id</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">以左表为基准，没有对应的值则为null</span><span class="w"></span>
+<span class="w">    </span><span class="c1">-- 自连接</span><span class="w"></span>
+<span class="w">        </span><span class="n">把一个表用两个别名当两个表用</span><span class="w"></span>
+</code></pre></div>
+<h3 id="_6">视图<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">-- 创建一个视图</span><span class="w"></span>
+<span class="w">    </span><span class="k">create</span><span class="w"> </span><span class="k">view</span><span class="w"> </span><span class="n">视图名</span><span class="p">(</span><span class="n">最好以v开头</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="n">语句</span><span class="w"></span>
+<span class="w">    </span><span class="n">视图是一个虚拟的表，查询用，用时则执行相应的sql语句</span><span class="w"></span>
+<span class="w">    </span><span class="n">查看只需select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">视图名</span><span class="w"></span>
+<span class="w">    </span><span class="n">eg</span><span class="o">:</span><span class="w"> </span><span class="k">create</span><span class="w"> </span><span class="k">view</span><span class="w"> </span><span class="n">v_GSW_old</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">GSW</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">is_old</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="c1">-- 删除视图</span><span class="w"></span>
+<span class="w">    </span><span class="k">drop</span><span class="w"> </span><span class="k">view</span><span class="w"> </span><span class="n">视图名</span><span class="w"></span>
+</code></pre></div>
+<h3 id="_7">事务<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">-- 四大特性(ACID)</span><span class="w"></span>
+<span class="w">    </span><span class="c1">-- 原子性(Atomicity)</span><span class="w"></span>
+<span class="w">    </span><span class="c1">-- 一致性(Consistency)</span><span class="w"></span>
+<span class="w">    </span><span class="c1">-- 隔离性(Isolation)</span><span class="w"></span>
+<span class="w">    </span><span class="c1">-- 持久性(Durability)</span><span class="w"></span>
+
+<span class="c1">-- 开启事务</span><span class="w"></span>
+<span class="w">    </span><span class="k">begin</span><span class="w"> </span><span class="n">或</span><span class="w"> </span><span class="k">start</span><span class="w"> </span><span class="k">transaction</span><span class="p">;</span><span class="w"></span>
+
+<span class="c1">-- 提交事务</span><span class="w"></span>
+<span class="w">    </span><span class="k">commit</span><span class="n">；</span><span class="w"></span>
+<span class="c1">-- 回滚事务</span><span class="w"></span>
+<span class="w">    </span><span class="k">rollback</span><span class="n">；</span><span class="w"></span>
+</code></pre></div>
+<h3 id="_8">索引<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">-- 查看索引</span><span class="w"></span>
+<span class="w">    </span><span class="k">show</span><span class="w"> </span><span class="k">index</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">表名</span><span class="w"></span>
+
+<span class="c1">-- 建立索引</span><span class="w"></span>
+<span class="w">    </span><span class="k">create</span><span class="w"> </span><span class="k">index</span><span class="w"> </span><span class="n">索引名</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">表名</span><span class="p">(</span><span class="n">字段名称</span><span class="p">(</span><span class="n">长度</span><span class="p">))</span><span class="w"></span>
+<span class="w">    </span><span class="n">如果指定字段是字符串，则需指定长度，建议一致</span><span class="w"></span>
+<span class="w">    </span><span class="n">若不是，则不需要</span><span class="w"></span>
+<span class="w">    </span><span class="n">eg</span><span class="o">:</span><span class="k">create</span><span class="w"> </span><span class="k">index</span><span class="w"> </span><span class="n">player_search</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">GSW</span><span class="p">(</span><span class="k">name</span><span class="p">(</span><span class="mi">30</span><span class="p">));</span><span class="w"></span>
+
+<span class="c1">-- 删除索引</span><span class="w"></span>
+<span class="w">    </span><span class="k">drop</span><span class="w"> </span><span class="k">index</span><span class="w"> </span><span class="n">索引名称</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">表名</span><span class="w"></span>
+
+
+<span class="c1">-- 查询</span><span class="w"></span>
+<span class="w">    </span><span class="c1">-- 开启运行时间监测</span><span class="w"></span>
+<span class="w">        </span><span class="k">set</span><span class="w"> </span><span class="n">profiling</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="c1">-- 查看执行时间</span><span class="w"></span>
+<span class="w">        </span><span class="k">show</span><span class="w"> </span><span class="k">profiles</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<h3 id="_9">账户管理<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">-- 创建用户</span><span class="w"></span>
+<span class="w">    </span><span class="n">先root账户登录，再创建</span><span class="w"></span>
+<span class="w">    </span><span class="k">grant</span><span class="w"> </span><span class="n">权限列表</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">数据库</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="s1">&#39;用户名&#39;</span><span class="nv">@&#39;访问主机&#39;</span><span class="w"> </span><span class="k">identified</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s1">&#39;密码&#39;</span><span class="p">;</span><span class="w"></span>
+
+<span class="c1">-- 查看用户有哪些权限</span><span class="w"></span>
+<span class="w">    </span><span class="k">show</span><span class="w"> </span><span class="k">grants</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">用户名</span><span class="err">@</span><span class="n">访问主机</span><span class="w"></span>
+<span class="c1">-- 修改权限</span><span class="w"></span>
+<span class="w">    </span><span class="k">grant</span><span class="w"> </span><span class="n">权限名称</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">数据库</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">账户</span><span class="err">@</span><span class="n">主机</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="k">grant</span><span class="w"> </span><span class="k">option</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">之后刷新权限</span><span class="w"> </span><span class="k">flush</span><span class="w"> </span><span class="k">privileges</span><span class="w"> </span><span class="n">使权限生效</span><span class="w"></span>
+
+<span class="c1">-- 修改密码</span><span class="w"></span>
+<span class="w">    </span><span class="n">使用root登录，修改mysql数据库中的user表</span><span class="w"></span>
+<span class="w">    </span><span class="c1">-- 使用password()函数加密</span><span class="w"></span>
+<span class="w">    </span><span class="k">update</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">authentication_string</span><span class="o">=</span><span class="k">password</span><span class="p">(</span><span class="s1">&#39;新密码&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="k">user</span><span class="o">=</span><span class="s1">&#39;用户名&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="n">之后刷新权限</span><span class="w"> </span><span class="k">flush</span><span class="w"> </span><span class="k">privileges</span><span class="w"></span>
+<span class="c1">-- 删除用户</span><span class="w"></span>
+<span class="w">    </span><span class="k">drop</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="s1">&#39;用户名&#39;</span><span class="nv">@&#39;主机[如(%)]&#39;</span><span class="p">;</span><span class="w"></span>
+
+<span class="c1">-- 远程连接慎用，用时再查资料</span><span class="w"></span>
+</code></pre></div>
+<h3 id="_10">主从数据库<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<h3 id="python">Python与数据库交互<a class="headerlink" href="#python" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pymysql</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+
+        <span class="c1">#创建Connection连接</span>
+        <span class="n">conn</span> <span class="o">=</span>  <span class="n">Connect</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span><span class="n">port</span><span class="o">=</span><span class="mi">3306</span><span class="p">,</span><span class="n">user</span><span class="o">=</span><span class="s1">&#39;root&#39;</span><span class="p">,</span>\
+                <span class="n">password</span><span class="o">=</span><span class="s1">&#39;x1048844361&#39;</span><span class="p">,</span><span class="n">database</span><span class="o">=</span><span class="s1">&#39;nbateam&#39;</span><span class="p">,</span><span class="n">charset</span><span class="o">=</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span>
+        <span class="c1">#获得cursor对象</span>
+        <span class="n">cs1</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+        <span class="c1">#执行select语句，并返回受影响的行数：查询一条数据</span>
+        <span class="c1">#execute会返回生效行数</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="n">cs1</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;select id,name from GSW where is_old=1&#39;</span><span class="p">)</span>
+        <span class="c1">#打印受影响的行数</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;查询到</span><span class="si">%d</span><span class="s1">条数据:&#39;</span> <span class="o">%</span> <span class="n">count</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">count</span><span class="p">):</span>
+                <span class="c1">#获取查询结果</span>
+                <span class="c1">#fetchall() fetchmany(数量) fetchone() 返回元组</span>
+                <span class="c1">#游标自动移动</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="n">cs1</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()</span>
+                <span class="c1">#打印查询的结果 </span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+        <span class="c1">#关闭cursor对象</span>
+        <span class="c1">#conn先开后关</span>
+        <span class="n">cs1</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+        <span class="n">main</span><span class="p">()</span>
+</code></pre></div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      copyright &copy; 2021-present <a href="https://github.com/xxy2000s" target="_blank" rel="noopener noreferrer">xxy2000s</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.078830c0.min.js"></script>
+      
+    
+  </body>
+</html>

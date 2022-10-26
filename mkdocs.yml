@@ -79,8 +79,8 @@ markdown_extensions:
   - pymdownx.tasklist
   - pymdownx.tilde
  
- extra_css:
-  - site/assets/stylesheets/extra.css
+extra_css:
+  - resources/extra.css
 
   
   

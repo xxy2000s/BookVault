@@ -16,7 +16,7 @@ new String(chars)
 
 
 
-# 输入输出
+## 输入输出
 
 ```java
 Scanner sc = new Scanner(System.in);
@@ -120,11 +120,11 @@ System.out.printf();
 
 ```
 
-# 快速查看
+## 快速查看
 
 ![](https://i.loli.net/2020/08/12/K12bdj8I3BMANoJ.png)
 
-# 最大最小值
+## 最大最小值
 
 fmax = Float.MAX_VALUE;
 
@@ -154,7 +154,7 @@ lmax = Long.MAX_VALUE;
 
 lmin = Long.MIN_VALUE;
 
-# string
+## string
 
 不可变量, 每个位置元素是个 char
 
@@ -299,7 +299,7 @@ lastIndexOf(String str, int fromIndex);//同上，从指定位置查找
 
 ```
 
-# 集合
+## 集合
 
 [Java HashMap | 菜鸟教程 (runoob.com)](https://www.runoob.com/java/java-hashmap.html)
 
@@ -507,7 +507,7 @@ Queue<Integer> maxH = new PriorityQueue<>(100, (i1, i2) -> i2 - i1);    // 定�
 
 方法：offer, poll, peek, isEmpty, size
 
-# 数组
+## 数组
 
 ## 静态数组
 
@@ -604,7 +604,7 @@ list.remove(list.size() - 1);
  从小到大排序  
  从大到小排序， 第二个参数为一个比较器
 
-# Math
+## Math
 
 ```java
 Math.max(long a, long b)
@@ -632,4 +632,4 @@ int a = (int)(Math.random()*(b - a + 1) + a);	//[a, b]
 
 ```
 
-# 字母数字有关函数
+## 字母数字有关函数

@@ -1,7 +1,7 @@
-site_name: xxy's md
-site_url: http://md.xiaxuyang.com
+site_name: xxy's lib
+site_url: http://lib.xiaxuyang.com
 site_author: xxy2000s
-copyright: copyright &copy; 2021-present <a href="https://github.com/xxy2000s" target="_blank" rel="noopener noreferrer">xxy2000s</a>
+copyright: copyright &copy; 2022-present <a href="https://github.com/xxy2000s" target="_blank" rel="noopener noreferrer">xxy2000s</a>
 theme:
   name: material
 nav:
@@ -15,6 +15,8 @@ nav:
       - Go: "开发/Go.md"
       - Python: "开发/Python.md"
       - C++: "开发/C++.md"  
+      - 数据库: 
+           - SQL实战: "SQL实战.md"
   - 算法: 
       - 大纲汇总: "算法/大纲.md"
       - 动态规划: "算法/动态规划.md"
@@ -30,11 +32,10 @@ nav:
       - 位运算: "算法/位运算.md"
       - 栈与队列: "算法/栈与队列.md"
       - 字符串: "算法/字符串.md"
-
       - 题集:
-          - 算法系统复习: "题集/算法系统复习.md"
-          - 常用STL: "题集/常用STL.md"
-          - 力扣HOT100: "题集/力扣HOT100.md"
+          - 算法系统复习: "算法/题集/算法系统复习.md"
+          - 常用STL: "算法/题集/常用STL.md"
+          - 力扣HOT100: "算法/题集/力扣HOT100.md"
   - 面试:
       - 精选Leetcode: "面试/校招LeetCode精选题目.md"
       - 大厂面经: "面试/校招大厂面经.md"
@@ -42,7 +43,7 @@ nav:
       - 智力题: "面试/校招高频智力题.md"  
       - 投简历: "面试/校招各公司投简历官方地址.md"  
   - JavaAPI: "JavaAPI.md"
-  - Linux: "Linux.md"
+  - Linux: "Linux命令手册.md"
   - 文件: 
       - Linux大全: "文件/Linux大全.pdf"
       - Java开源项目汇总: "文件/Java开源项目汇总.pdf"
@@ -77,7 +78,10 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tasklist
   - pymdownx.tilde
-  
+ 
+ extra_css:
+  - site/assets/stylesheets/extra.css
+
   
   
   

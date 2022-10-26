@@ -11,7 +11,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://md.xiaxuyang.com/Linux/</loc>
+         <loc>http://md.xiaxuyang.com/Linux%E5%91%BD%E4%BB%A4%E6%89%8B%E5%86%8C/</loc>
+         <lastmod>2022-10-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://md.xiaxuyang.com/SQL%E5%AE%9E%E6%88%98/</loc>
          <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -47,16 +52,6 @@
     </url>
     <url>
          <loc>http://md.xiaxuyang.com/%E5%BC%80%E5%8F%91/Python/</loc>
-         <lastmod>2022-10-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>http://md.xiaxuyang.com/%E6%96%87%E4%BB%B6/Linux%E5%91%BD%E4%BB%A4%E6%89%8B%E5%86%8C/</loc>
-         <lastmod>2022-10-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>http://md.xiaxuyang.com/%E6%96%87%E4%BB%B6/SQL%E5%AE%9E%E6%88%98/</loc>
          <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>

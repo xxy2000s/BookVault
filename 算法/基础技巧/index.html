@@ -564,6 +564,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#76" class="md-nav__link">
+    76. 最小覆盖子串
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#84" class="md-nav__link">
     84. 柱状图中最大的矩形
   </a>
@@ -579,6 +586,19 @@
   <a href="#_4" class="md-nav__link">
     前缀和
   </a>
+  
+    <nav class="md-nav" aria-label="前缀和">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#560-k" class="md-nav__link">
+    560. 和为 K 的子数组
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1138,6 +1158,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#76" class="md-nav__link">
+    76. 最小覆盖子串
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#84" class="md-nav__link">
     84. 柱状图中最大的矩形
   </a>
@@ -1153,6 +1180,19 @@
   <a href="#_4" class="md-nav__link">
     前缀和
   </a>
+  
+    <nav class="md-nav" aria-label="前缀和">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#560-k" class="md-nav__link">
+    560. 和为 K 的子数组
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1284,6 +1324,10 @@
 <td></td>
 </tr>
 <tr>
+<td><a href="https://leetcode.cn/problems/minimum-window-substring/">76. 最小覆盖子串</a></td>
+<td></td>
+</tr>
+<tr>
 <td><a href="https://leetcode.cn/problems/largest-rectangle-in-histogram/">84. 柱状图中最大的矩形</a></td>
 <td></td>
 </tr>
@@ -1309,6 +1353,73 @@
 </tr>
 <tr>
 <td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="76"><a href="https://leetcode.cn/problems/minimum-window-substring/">76. 最小覆盖子串</a><a class="headerlink" href="#76" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>给你一个字符串 s 、一个字符串 t 。返回 s 中涵盖 t 所有字符的最小子串。如果 s 中不存在涵盖 t 所有字符的子串，则返回空字符串 "" 。</p>
+<p>注意：</p>
+<p>对于 t 中重复字符，我们寻找的子字符串中该字符数量必须不少于 t 中该字符数量。
+如果 s 中存在这样的子串，我们保证它是唯一的答案。</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="c1">//java的map也太沙茶了</span><span class="w"></span>
+<span class="kd">class</span> <span class="nc">Solution</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">minWindow</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">//维护长度</span><span class="w"></span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="na">length</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="c1">//存起始点，方便返回字串</span><span class="w"></span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">Character</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">mp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="c1">//存键值对</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">t</span><span class="p">.</span><span class="na">length</span><span class="p">();</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
+<span class="w">            </span><span class="n">mp</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">mp</span><span class="p">.</span><span class="na">getOrDefault</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="c1">//cnt统计，为0时则代表有子串</span><span class="w"></span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">cnt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="na">length</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="c1">//左指针</span><span class="w"></span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">lo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="c1">//hi为右指针</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">hi</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">hi</span><span class="o">&lt;</span><span class="n">s</span><span class="p">.</span><span class="na">length</span><span class="p">();</span><span class="n">hi</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">mp</span><span class="p">.</span><span class="na">containsKey</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">hi</span><span class="p">))){</span><span class="w"></span>
+<span class="w">                </span><span class="n">mp</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">hi</span><span class="p">),</span><span class="w"> </span><span class="n">mp</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">hi</span><span class="p">))</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">                </span><span class="k">if</span><span class="p">(</span><span class="n">mp</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">hi</span><span class="p">))</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">cnt</span><span class="o">--</span><span class="p">;</span><span class="w"></span>
+<span class="w">                </span><span class="c1">//cnt为0则表示已经找到满足字串</span><span class="w"></span>
+<span class="w">                </span><span class="c1">//进入循环直到找到最小的字串</span><span class="w"></span>
+<span class="w">                </span><span class="k">while</span><span class="p">(</span><span class="n">cnt</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">){</span><span class="w"></span>
+<span class="w">                    </span><span class="c1">//更新len以及start</span><span class="w"></span>
+<span class="w">                    </span><span class="k">if</span><span class="p">(</span><span class="n">len</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">hi</span><span class="o">-</span><span class="n">lo</span><span class="o">+</span><span class="mi">1</span><span class="p">){</span><span class="w"></span>
+<span class="w">                        </span><span class="n">len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hi</span><span class="o">-</span><span class="n">lo</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">                        </span><span class="n">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lo</span><span class="p">;</span><span class="w"></span>
+<span class="w">                    </span><span class="p">}</span><span class="w"></span>
+<span class="w">                    </span><span class="c1">//如果碰到是t中存在的字符</span><span class="w"></span>
+<span class="w">                    </span><span class="k">if</span><span class="p">(</span><span class="n">mp</span><span class="p">.</span><span class="na">containsKey</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">lo</span><span class="p">))){</span><span class="w"></span>
+<span class="w">                        </span><span class="c1">//自增</span><span class="w"></span>
+<span class="w">                        </span><span class="n">mp</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">lo</span><span class="p">),</span><span class="w"> </span><span class="n">mp</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">lo</span><span class="p">))</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">                        </span><span class="c1">//如果增加后的计数&gt;0 则cnt统计要加上</span><span class="w"></span>
+<span class="w">                        </span><span class="k">if</span><span class="p">(</span><span class="n">mp</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">lo</span><span class="p">))</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">cnt</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="w">                    </span><span class="p">}</span><span class="w"></span>
+<span class="w">                    </span><span class="n">lo</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="w">                </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">start</span><span class="o">==-</span><span class="mi">1</span><span class="o">?</span><span class="s">&quot;&quot;</span><span class="p">:</span><span class="n">s</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="n">start</span><span class="o">+</span><span class="n">len</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">避坑</span><span class="err">：</span><span class="w"> </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">Character</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">map1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">..;</span><span class="w"> </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">Character</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">map2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">..;</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="n">map1</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">map2</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">ch</span><span class="p">);</span><span class="c1">//不行 map1.get(ch).equals(map2.get(ch));//行 map1.get(ch).intValue() == map2.get(ch).intValue();//行</span><span class="w"></span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://leetcode.cn/problems/shortest-supersequence-lcci/">面试题 17.18. 最短超串</a></td>
 <td></td>
 </tr>
 </tbody>
@@ -1378,6 +1489,36 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h2 id="_4">前缀和<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p><a href="https://leetcode.cn/problems/subarray-sum-equals-k/solution/de-liao-yi-wen-jiang-qian-zhui-he-an-pai-yhyf/">【动画模拟】秒杀七道题 - 和为 K 的子数组 - 力扣（LeetCode）</a></p>
+<h4 id="560-k"><a href="https://leetcode.cn/problems/subarray-sum-equals-k/">560. 和为 K 的子数组</a><a class="headerlink" href="#560-k" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>给你一个整数数组 <code>nums</code> 和一个整数 <code>k</code> ，请你统计并返回 <em>该数组中和为 <code>k</code> 的连续子数组的个数</em> 。</p>
+<p><strong>不仅使用前缀和，还使用map拒绝重复遍历，是两数之和升级版。主要在于map的局部计数</strong></p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="c1">//时空复杂度均为O(n)</span><span class="w"></span>
+<span class="kd">class</span> <span class="nc">Solution</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">subarraySum</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">nums</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nums</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="c1">//前缀和数组长度多一个起始位</span><span class="w"></span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">preSum</span><span class="o">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[</span><span class="n">len</span><span class="o">+</span><span class="mi">1</span><span class="o">]</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">mp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="c1">//可以视为起始的前缀和为0</span><span class="w"></span>
+<span class="w">        </span><span class="n">mp</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="c1">//计算前缀和和计算结果可以同时进行</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">len</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
+<span class="w">            </span><span class="n">preSum</span><span class="o">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">preSum</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="c1">//找前面满足的子数组和的个数</span><span class="w"></span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">mp</span><span class="p">.</span><span class="na">containsKey</span><span class="p">(</span><span class="n">preSum</span><span class="o">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">]-</span><span class="n">k</span><span class="p">)){</span><span class="w"></span>
+<span class="w">                </span><span class="n">res</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">mp</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">preSum</span><span class="o">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">]-</span><span class="n">k</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="c1">//更新mp数组</span><span class="w"></span>
+<span class="w">            </span><span class="n">mp</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">preSum</span><span class="o">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">mp</span><span class="p">.</span><span class="na">getOrDefault</span><span class="p">(</span><span class="n">preSum</span><span class="o">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">res</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 <h2 id="_5">单调栈<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <h2 id="_6">分治<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <h2 id="_7">贪心<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>

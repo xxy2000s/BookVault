@@ -368,6 +368,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%B7%A5%E5%85%B7/idea/" class="md-nav__link">
+        idea
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1047,27 +1061,34 @@
       
         <li class="md-nav__item">
   <a href="#priorityqueue-heap" class="md-nav__link">
-    优先队列 PriorityQueue (Heap)
+    PriorityQueue (Heap)
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
-    数组
+    重写排序比较器
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
-    静态数组
+    数组
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
+    静态数组
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
     动态数组
   </a>
   
@@ -1081,7 +1102,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     字母数字有关函数
   </a>
   
@@ -1340,27 +1361,34 @@
       
         <li class="md-nav__item">
   <a href="#priorityqueue-heap" class="md-nav__link">
-    优先队列 PriorityQueue (Heap)
+    PriorityQueue (Heap)
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
-    数组
+    重写排序比较器
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
-    静态数组
+    数组
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
+    静态数组
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
     动态数组
   </a>
   
@@ -1374,7 +1402,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     字母数字有关函数
   </a>
   
@@ -1779,7 +1807,7 @@ lastIndexOf(String str, int fromIndex);//同上，从指定位置查找
 <span class="n">Set</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">set</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashSet</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">list</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
 <p>方法：add, remove, contains, isEmpty, size</p>
-<h2 id="priorityqueue-heap">优先队列 PriorityQueue (Heap)<a class="headerlink" href="#priorityqueue-heap" title="Permanent link">&para;</a></h2>
+<h2 id="priorityqueue-heap">PriorityQueue (Heap)<a class="headerlink" href="#priorityqueue-heap" title="Permanent link">&para;</a></h2>
 <p>底层是一颗数， 以小根堆为例</p>
 <p>初始化</p>
 <div class="highlight"><pre><span></span><code><span class="c1">//小根堆</span><span class="w"></span>
@@ -1791,8 +1819,19 @@ lastIndexOf(String str, int fromIndex);//同上，从指定位置查找
 <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">maxH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PriorityQueue</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">i1</span><span class="p">,</span><span class="w"> </span><span class="n">i2</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">i2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">i1</span><span class="p">);</span><span class="w">    </span><span class="c1">// 定义一个默认容量有100的大根堆。在当中增加元素会扩容，只是开始指定大小</span><span class="w"></span>
 </code></pre></div>
 <p>方法：offer, poll, peek, isEmpty, size</p>
-<h2 id="_5">数组<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<h2 id="_6">静态数组<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="_5">重写排序比较器<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p><a href="https://blog.csdn.net/GD_ONE/article/details/104146301">(15条消息) java中sort方法的自定义比较器写法_Androids_lost_Sheep的博客-CSDN博客</a></p>
+<div class="highlight"><pre><span></span><code><span class="n">Arrays</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">intervals</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Comparator</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">[]&gt;</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">            </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">compare</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">o1</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">o2</span><span class="p">){</span><span class="w"></span>
+<span class="w">                </span><span class="c1">//根据第二个元素升序排列</span><span class="w"></span>
+<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="n">o1</span><span class="o">[</span><span class="mi">1</span><span class="o">]-</span><span class="n">o2</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<h2 id="_6">数组<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="_7">静态数组<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c1">//一维</span><span class="w"></span>
 <span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="o">[</span><span class="mi">3</span><span class="o">]</span><span class="p">;</span><span class="w"></span>
 <span class="kt">char</span><span class="o">[]</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">char</span><span class="o">[]</span><span class="p">{</span><span class="sc">&#39;a&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;b&#39;</span><span class="p">};</span><span class="w">  </span>
@@ -1830,7 +1869,7 @@ System.out.println(Arrays.binarySearch(arr, 20));//找不到的话返回-x
 <span class="kt">int</span><span class="w"> </span><span class="o">[]</span><span class="n">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">50</span><span class="p">};</span><span class="w"></span>
 <span class="kt">int</span><span class="w"> </span><span class="o">[]</span><span class="n">arr1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">copyOfRange</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span><span class="c1">// [) 10 20</span><span class="w"></span>
 </code></pre></div>
-<h2 id="_7">动态数组<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h2 id="_8">动态数组<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w">    </span><span class="c1">// 数组</span><span class="w"></span>
 <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w">    </span><span class="c1">// 链表</span><span class="w"></span>
 <span class="n">List</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w">    </span><span class="c1">//二维数组</span><span class="w"></span>
@@ -1866,7 +1905,7 @@ System.out.println(Arrays.binarySearch(arr, 20));//找不到的话返回-x
 <span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">Math</span><span class="p">.</span><span class="na">random</span><span class="p">()</span><span class="o">*</span><span class="n">b</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// [1, b]</span><span class="w"></span>
 <span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">Math</span><span class="p">.</span><span class="na">random</span><span class="p">()</span><span class="o">*</span><span class="p">(</span><span class="n">b</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">a</span><span class="p">);</span><span class="w">   </span><span class="c1">//[a, b]</span><span class="w"></span>
 </code></pre></div>
-<h2 id="_8">字母数字有关函数<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h2 id="_9">字母数字有关函数<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 
 
 
